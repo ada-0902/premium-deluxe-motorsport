@@ -1,0 +1,1903 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000000;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    padding: 0 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+
+    background: rgba(8, 8, 8, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 110px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.04);
+    opacity: 0.9;
+}
+
+.logo span {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.logo small {
+    font-size: 7px;
+    letter-spacing: 2px;
+    opacity: 0.55;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    position: relative;
+
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+
+    transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: white;
+}
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -9px;
+
+    width: 100%;
+    height: 1px;
+
+    background: white;
+}
+
+.menu-button {
+    display: none;
+
+    border: none;
+    background: none;
+    color: white;
+
+    font-size: 24px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    height: 100vh;
+    min-height: 700px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 70% 45%,
+            rgba(255, 255, 255, 0.12),
+            transparent 90%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 255, 255, 0.05),
+            transparent 30%
+        ),
+        linear-gradient(
+            110deg,
+            #050505 0%,
+            #0c0c0c 50%,
+            #151515 100%
+        );
+}
+
+.hero-background::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.75)
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin-left: 9vw;
+
+    padding-top: 70px;
+}
+
+.hero-small {
+    margin-bottom: 25px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.hero h1 {
+    font-size: clamp(60px, 8vw, 125px);
+
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+
+    font-weight: 700;
+}
+
+.hero-description {
+    max-width: 480px;
+
+    margin-top: 35px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.58);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+.button-primary,
+.button-secondary {
+    padding: 16px 25px;
+
+    font-size: 12px;
+
+    transition: 0.3s ease;
+}
+
+.button-primary {
+    background: white;
+    color: black;
+}
+
+.button-primary:hover {
+    transform: translateY(-3px);
+}
+
+.button-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.button-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 35px;
+    left: 9vw;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 10px;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    letter-spacing: 1px;
+}
+
+.scroll-indicator span {
+    width: 35px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories-section {
+    padding: 150px 9vw;
+
+    background: #0b0b0b;
+}
+
+.section-header {
+    margin-bottom: 70px;
+}
+
+.section-header p {
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.section-header h2 {
+    font-size: clamp(50px, 6vw, 90px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+}
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.category-card {
+    min-height: 280px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: #111;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    transition: 0.4s ease;
+}
+
+.category-card:hover {
+    background: #181818;
+
+    transform: translateY(-8px);
+
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.category-card span {
+    font-size: 11px;
+
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.category-card h3 {
+    font-size: 30px;
+
+    letter-spacing: -1px;
+}
+
+.category-card p {
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================
+   PRESENTATION
+========================= */
+
+.presentation {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 9vw;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            #202020,
+            #080808 50%
+        );
+}
+
+.presentation-content {
+    max-width: 650px;
+}
+
+.presentation-content > p:first-child {
+    margin-bottom: 25px;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.presentation h2 {
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+}
+
+.presentation-text {
+    max-width: 470px;
+
+    margin-top: 35px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.text-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+    font-size: 12px;
+
+    transition: 0.3s ease;
+}
+
+.text-button:hover {
+    padding-left: 8px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 70px 9vw;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 11px;
+}
+
+.footer-logo {
+    font-size: 25px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: white;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero-content {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        max-width: 250px;
+    }
+
+    .button-primary,
+    .button-secondary {
+        text-align: center;
+    }
+
+    .categories-section {
+        padding: 100px 25px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .presentation {
+        padding: 100px 25px;
+    }
+
+    footer {
+        padding: 50px 25px;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================
+   FOND ACCUEIL
+========================= */
+
+.home-page {
+    position: relative;
+    background: transparent;
+}
+
+.home-page::before {
+    content: "";
+
+    position: fixed;
+
+    inset: -30px;
+
+    background-image: url("azerty.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: blur(12px);
+
+    transform: scale(1.05);
+
+    z-index: -2;
+}
+
+.home-page::after {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CATALOGUE
+========================= */
+
+.catalogue-page {
+    position: relative;
+    isolation: isolate;
+
+    padding-top: 150px;
+
+    min-height: 100vh;
+
+    background: transparent !important;
+}
+
+.catalogue-page::before {
+    content: "";
+
+    position: fixed;
+
+    inset: -20px;
+
+    background-image: url("images/fond-catalogue.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: blur(10px);
+
+    transform: scale(1.05);
+
+    z-index: -2;
+}
+
+.catalogue-page::after {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+.catalogue-page > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================
+   EN-TÊTE DU CATALOGUE
+========================= */
+
+.catalogue-header {
+    padding: 0 9vw 70px;
+}
+
+.catalogue-header p {
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.catalogue-header h1 {
+    font-size: clamp(60px, 8vw, 120px);
+
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+}
+
+#vehicle-count {
+    display: block;
+
+    margin-top: 30px;
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================
+   OUTILS
+========================= */
+
+.catalogue-tools {
+    padding: 0 9vw 50px;
+}
+
+
+/* RECHERCHE */
+
+.search-box {
+    width: 100%;
+
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 0 22px;
+
+    background: #111;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition: 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-box span {
+    font-size: 28px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================
+   FILTRES
+========================= */
+
+.filters {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.filters select {
+    height: 55px;
+
+    padding: 0 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: #111;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    outline: none;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.filters select:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.filters select option {
+    background: #111;
+
+    color: white;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.vehicle-section {
+    padding: 0 9vw 120px;
+}
+
+.vehicle-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================
+   CARTE VÉHICULE
+========================= */
+
+.vehicle-card {
+    background: #111;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-7px);
+
+    background: #151515;
+
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.vehicle-image {
+    width: 100%;
+
+    height: 260px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #252525,
+            #101010 65%
+        );
+
+    overflow: hidden;
+}
+
+.vehicle-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.vehicle-card:hover .vehicle-image img {
+    transform: scale(1.05);
+}
+
+.vehicle-image span {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.vehicle-info {
+    padding: 25px 25px 15px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.vehicle-info small {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.vehicle-info h2 {
+    font-size: 25px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+.vehicle-info strong {
+    white-space: nowrap;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.vehicle-details {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 0 25px 25px;
+
+    flex-wrap: wrap;
+}
+
+.vehicle-details span {
+    padding: 7px 10px;
+
+    font-size: 9px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================
+   AUCUN RÉSULTAT
+========================= */
+
+.no-results {
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.no-results h2 {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.no-results p {
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE CATALOGUE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .vehicle-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .catalogue-page {
+        padding-top: 120px;
+    }
+
+    .catalogue-header,
+    .catalogue-tools,
+    .vehicle-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .catalogue-header h1 {
+        letter-spacing: -3px;
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-image {
+        height: 230px;
+    }
+}
+
+
+/* =========================
+   FICHE VEHICULE
+========================= */
+
+.vehicle-page {
+    min-height: 100vh;
+
+    padding: 140px 9vw 100px;
+
+    background: #080808;
+}
+
+.back-button {
+    display: inline-block;
+
+    margin-bottom: 50px;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    color: white;
+
+    transform: translateX(-5px);
+}
+
+#vehicle-details-page {
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    min-height: 600px;
+
+    background: #101010;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vehicle-detail-image {
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292929,
+            #101010 65%
+        );
+}
+
+.vehicle-detail-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.8s ease;
+}
+
+.vehicle-detail-image:hover img {
+    transform: scale(1.03);
+}
+
+.vehicle-detail-image span {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.vehicle-detail-content {
+    padding: 70px 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.vehicle-detail-brand {
+    margin-bottom: 15px;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.vehicle-detail-content h1 {
+    font-size: clamp(50px, 5vw, 80px);
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+    font-weight: 600;
+}
+
+.vehicle-detail-category {
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.vehicle-detail-price {
+    margin-top: 35px;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+.vehicle-specs {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin-top: 45px;
+}
+
+.vehicle-specs div {
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.vehicle-specs span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 9px;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.vehicle-specs strong {
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+.vehicle-description {
+    margin-top: 35px;
+
+    max-width: 500px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.vehicle-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+.favorite-button,
+.contact-button {
+    padding: 15px 20px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.favorite-button {
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.favorite-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-button {
+    background: white;
+
+    color: black;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+}
+
+.vehicle-not-found {
+    grid-column: 1 / -1;
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.vehicle-not-found h1 {
+    font-size: 50px;
+}
+
+.vehicle-not-found p {
+    margin-top: 15px;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.vehicle-not-found a {
+    margin-top: 30px;
+
+    padding: 14px 20px;
+
+    background: white;
+
+    color: black;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   MOBILE VEHICULE
+========================= */
+
+@media (max-width: 900px) {
+
+    .vehicle-page {
+        padding: 120px 25px 70px;
+    }
+
+    #vehicle-details-page {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-detail-image {
+        min-height: 400px;
+    }
+
+    .vehicle-detail-content {
+        padding: 50px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .vehicle-detail-content h1 {
+        letter-spacing: -2px;
+    }
+
+    .vehicle-specs {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-actions {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================
+   PAGE CONTACT
+========================================= */
+
+.contact-page {
+    position: relative;
+
+    isolation: isolate;
+
+    min-height: 100vh;
+
+    padding-top: 140px;
+
+    background: transparent !important;
+
+    color: #fff;
+}
+
+.contact-page::before {
+    content: "";
+
+    position: fixed;
+
+    inset: -20px;
+
+    background-image: url("images/fond-contact.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: blur(10px);
+
+    transform: scale(1.05);
+
+    z-index: -2;
+}
+
+.contact-page::after {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+.contact-page > * {
+    position: relative;
+
+    z-index: 1;
+}
+
+.contact-hero {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 100px 40px 120px;
+}
+
+.contact-hero p {
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #888;
+}
+
+.contact-hero h1 {
+    margin: 0;
+
+    font-size: clamp(60px, 9vw, 130px);
+
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+
+    font-weight: 600;
+}
+
+.contact-hero span {
+    display: block;
+
+    max-width: 500px;
+
+    margin-top: 45px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: #999;
+}
+
+.contact-content {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 40px 120px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 80px;
+}
+
+.contact-card {
+    padding: 55px;
+
+    border: 1px solid #222;
+
+    border-radius: 28px;
+
+    background: #080808;
+}
+
+.contact-card small {
+    color: #777;
+
+    letter-spacing: 3px;
+}
+
+.contact-card h2 {
+    margin: 20px 0;
+
+    font-size: 42px;
+
+    letter-spacing: -2px;
+}
+
+.contact-card p {
+    max-width: 600px;
+
+    color: #888;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+.contact-button {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 25px;
+
+    color: #000;
+
+    background: #fff;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+
+    background: #ddd;
+}
+
+.contact-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 45px;
+}
+
+.contact-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #222;
+}
+
+.contact-info span {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #666;
+}
+
+.contact-info strong {
+    font-size: 20px;
+
+    font-weight: 500;
+}
+
+@media (max-width: 800px) {
+
+    .contact-hero {
+        padding: 70px 25px 80px;
+    }
+
+    .contact-hero h1 {
+        font-size: 65px;
+
+        letter-spacing: -4px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+
+        padding: 0 25px 80px;
+
+        gap: 40px;
+    }
+
+    .contact-card {
+        padding: 35px 25px;
+    }
+
+    .contact-card h2 {
+        font-size: 32px;
+    }
+
+    .contact-info {
+        gap: 30px;
+    }
+}
+
+
+/* =========================================
+   PAGE À PROPOS
+========================================= */
+
+.about-page {
+    position: relative;
+
+    isolation: isolate;
+
+    min-height: 100vh;
+
+    padding-top: 140px;
+
+    background: transparent !important;
+
+    color: #fff;
+}
+
+.about-page::before {
+    content: "";
+
+    position: fixed;
+
+    inset: -20px;
+
+    background-image: url("images/fond-apropos.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: blur(10px);
+
+    transform: scale(1.05);
+
+    z-index: -2;
+}
+
+.about-page::after {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+.about-page > * {
+    position: relative;
+
+    z-index: 1;
+}
+
+.about-hero {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 100px 40px 120px;
+}
+
+.about-hero p {
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #888;
+}
+
+.about-hero h1 {
+    margin: 0;
+
+    font-size: clamp(60px, 9vw, 130px);
+
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+
+    font-weight: 600;
+}
+
+.about-hero span {
+    display: block;
+
+    max-width: 520px;
+
+    margin-top: 45px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: #999;
+}
+
+.about-content {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 40px 120px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 80px;
+}
+
+.about-card {
+    padding: 55px;
+
+    border: 1px solid #222;
+
+    border-radius: 28px;
+
+    background: #080808;
+}
+
+.about-card small {
+    color: #777;
+
+    letter-spacing: 3px;
+}
+
+.about-card h2 {
+    margin: 20px 0 30px;
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.about-card p {
+    max-width: 650px;
+
+    color: #888;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    margin-bottom: 25px;
+}
+
+.about-stats {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 40px;
+}
+
+.about-stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #222;
+}
+
+.about-stats strong {
+    font-size: 38px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+.about-stats span {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #666;
+}
+
+@media (max-width: 800px) {
+
+    .about-hero {
+        padding: 70px 25px 80px;
+    }
+
+    .about-hero h1 {
+        font-size: 65px;
+
+        letter-spacing: -4px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+
+        padding: 0 25px 80px;
+
+        gap: 40px;
+    }
+
+    .about-card {
+        padding: 35px 25px;
+    }
+
+    .about-card h2 {
+        font-size: 36px;
+    }
+}
+.home-page {
+    position: relative;
+    background: transparent;
+}
+
+.home-page::before {
+    content: "";
+    position: fixed;
+    inset: -30px;
+    background-image: url("azerty.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(12px);
+    transform: scale(1.05);
+    z-index: -2;
+}
+
+.home-page::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: -1;
+    pointer-events: none;
+}
+/* =========================================
+   PHOTOS DES CATÉGORIES - ACCUEIL
+========================================= */
+
+.category-card {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    isolation: isolate;
+}
+
+/* Voile sombre par-dessus la photo */
+.category-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.05)
+    );
+    z-index: -1;
+}
+
+/* Super */
+.category-super {
+    background-image: url("super.jpg");
+}
+
+/* Sport */
+.category-sport {
+    background-image: url("sport.jpg");
+}
+
+/* SUV */
+.category-suv {
+    background-image: url("suv.jpg");
+}
+
+/* sedans */
+.category-sedans {
+    background-image: url("sedans.jpg");
+}
+
+/* Contenu au-dessus de la photo */
+.category-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Effet au survol */
+.category-card:hover::before {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.1)
+    );
+}
+/* =========================================
+   FOND UNIQUE SUR TOUT LE SITE
+========================================= */
+
+.home-page,
+.catalogue-page,
+.about-page,
+.contact-page {
+    background: transparent !important;
+}
+
+/* Même image sur les 4 pages */
+.home-page::before,
+.catalogue-page::before,
+.about-page::before,
+.contact-page::before {
+    background-image: url("azerty.jpg") !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(12px);
+    transform: scale(1.05);
+
+    position: fixed;
+    inset: -30px;
+
+    z-index: -2;
+}
+
+/* Voile sombre */
+.home-page::after,
+.catalogue-page::after,
+.about-page::after,
+.contact-page::after {
+    background: rgba(0, 0, 0, 0.25) !important;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+/* Laisser apparaître le fond sur l'accueil */
+.home-page .hero-background {
+    background: transparent;
+}
+
+.home-page .categories-section,
+.home-page .presentation {
+    background: transparent;
+}
+.photo-perso {
+    width: 100%;
+    max-width: 450px;
+    height: 550px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
