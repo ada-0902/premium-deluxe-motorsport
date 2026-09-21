@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catalogue — Premium Deluxe Motorsport</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <span>PDM</span>
+
+            <small>PREMIUM DELUXE MOTORSPORT</small>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Accueil
+            </a>
+
+            <a href="catalogue.html" class="active">
+                Catalogue
+            </a>
+
+            <a href="a-propos.html">
+                À propos
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <button class="menu-button">
+            ☰
+        </button>
+
+    </header>
+
+
+
+    <!-- CATALOGUE -->
+
+    <main class="catalogue-page">
+
+
+        <!-- TITRE -->
+
+        <section class="catalogue-header">
+
+            <p>PREMIUM DELUXE MOTORSPORT</p>
+
+            <h1>
+                Notre catalogue.
+            </h1>
+
+            <span id="vehicle-count">
+                0 véhicules disponibles
+            </span>
+
+        </section>
+
+
+
+        <!-- RECHERCHE -->
+
+        <section class="catalogue-tools">
+
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Rechercher une marque ou un modèle..."
+                >
+
+            </div>
+
+
+
+            <!-- FILTRES -->
+
+            <div class="filters">
+
+
+                <select id="category-filter">
+
+    <option value="all">
+        Toutes les catégories
+    </option>
+
+    <option value="Compacts">Compacts</option>
+    
+<option value="Coupés">Coupés</option>
+    <option value="Sedans">
+        Sedans
+    </option>
+
+    <option value="Sports">
+        Sports
+    </option>
+
+    <option value="Sports Classics">
+        Sports Classics
+    </option>
+
+    <option value="Super">
+        Super
+    </option>
+
+    <option value="Muscle">
+        Muscle
+    </option>
+
+    <option value="Off Road">
+        Off-Road
+    </option>
+
+    <option value="SUVs">
+        SUVs
+    </option>
+
+    <option value="Vans">
+        Vans
+    </option>
+
+    <option value="Utilitaire">
+        Utilitaires
+    </option>
+
+    <option value="Motos">
+        Motos
+    </option>
+
+    <option value="Vélos">
+        Vélos
+    </option>
+
+    <option value="Bâteaux">
+        Bâteaux
+    </option>
+
+</select>
+
+
+
+           <select id="price-filter">
+
+    <option value="all">
+        Tous les prix
+    </option>
+
+    <option value="0-5000">
+        0 — 5 000 $
+    </option>
+
+    <option value="5000-10000">
+        5 000 — 10 000 $
+    </option>
+
+    <option value="10000-25000">
+        10 000 — 25 000 $
+    </option>
+
+    <option value="25000-50000">
+        25 000 — 50 000 $
+    </option>
+
+    <option value="50000-75000">
+        50 000 — 75 000 $
+    </option>
+
+    <option value="75000-100000">
+        75 000 — 100 000 $
+    </option>
+
+    <option value="100000-500000">
+        100 000 — 500 000 $
+    </option>
+
+    <option value="500000-1000001">
+        500 000 — 1 000 000 $
+    </option>
+
+</select>
+
+
+                <select id="seats-filter">
+
+                    <option value="all">
+                        Toutes les places
+                    </option>
+
+                    <option value="1">
+                        1 place
+                    </option>
+
+                    <option value="2">
+                        2 places
+                    </option>
+
+                    <option value="3">
+                        3 places
+                    </option>
+
+                    <option value="4">
+                        4 places
+                    </option>
+
+                    <option value="5">
+                        5 places
+                    </option>
+
+                    <option value="6">
+                        6 places
+                    </option>
+
+                </select>
+<select id="trunk-filter">
+    <option value="all">Tous les coffres</option>
+    <option value="0-20">0 — 20 kg</option>
+    <option value="20-50">20 — 50 kg</option>
+    <option value="50-70">50 — 70 kg</option>
+    <option value="70-100">70 — 100 kg</option>
+    <option value="100-170">100 — 170 kg</option>
+</select>
+
+
+                <select id="sort-filter">
+
+                    <option value="default">
+                        Trier par
+                    </option>
+
+                    <option value="price-low">
+                        Prix croissant
+                    </option>
+
+                    <option value="price-high">
+                        Prix décroissant
+                    </option>
+
+                    <option value="name">
+                        Nom A → Z
+                    </option>
+
+                </select>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- VEHICULES -->
+
+        <section class="vehicle-section">
+
+            <div
+                id="vehicle-grid"
+                class="vehicle-grid"
+            >
+
+                <!--
+                    Les véhicules seront générés
+                    automatiquement par JavaScript.
+                -->
+
+            </div>
+
+
+            <div
+                id="no-results"
+                class="no-results"
+                style="display: none;"
+            >
+
+                <h2>
+                    Aucun véhicule trouvé.
+                </h2>
+
+                <p>
+                    Essayez de modifier votre recherche ou vos filtres.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            PDM
+        </div>
+
+        <p>
+            Premium Deluxe Motorsport
+        </p>
+
+        <span>
+            © 2026 Premium Deluxe Motorsport
+        </span>
+
+    </footer>
+
+
+
+    <script src="js/vehicles.js"></script>
+
+    <script src="js/catalogue.js"></script>
+
+
+</body>
+
+</html>
