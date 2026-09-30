@@ -6295,5 +6295,237 @@ const vehicles = [
         trunk: 80,
         image: "argento2f.jpg",
         description: ""
+    },
+    {
+        id: "Vapid-Retinue-LozSpeed",
+        name: "Vapid Retinue LozSpeed",
+        brand: "",
+        category: "Sports",
+        price: 50000,
+        seats: 4,
+        trunk: 80,
+        image: "9 Vapid Retinue LozSpeed.jpg",
+        description: ""
+    },
+    {
+        id: "Annis-Rumina",
+        name: "Annis Rumina",
+        brand: "",
+        category: "Sports",
+        price: 75000,
+        seats: 4,
+        trunk: 80,
+        image: "9 Annis Rumina.jpg",
+        description: ""
+    },
+    {
+        id: "Annis-Romulus",
+        name: "Annis Romulus",
+        brand: "",
+        category: "Sports",
+        price: 100000,
+        seats: 4,
+        trunk: 80,
+        image: "9 Annis Romulus.jpg",
+        description: ""
+    },
+    {
+        id: "Annis-Mochi",
+        name: "Annis Mochi",
+        brand: "",
+        category: "Sports",
+        price: 15000,
+        seats: 4,
+        trunk: 80,
+        image: "9 Annis Mochi.jpg",
+        description: ""
+    },
+    {
+        id: "Maibatsu-Archer-Pro-2",
+        name: "Maibatsu Archer Pro 2",
+        brand: "",
+        category: "Sports",
+        price: 150000,
+        seats: 4,
+        trunk: 80,
+        image: "9 Maibatsu Archer Pro 2.jpg",
+        description: ""
+    },
+    {
+        id: "Annis-ZR350",
+        name: "Annis ZR350",
+        brand: "",
+        category: "Sports",
+        price: 120000,
+        seats: 4,
+        trunk: 80,
+        image: "9 Annis ZR350.jpg",
+        description: ""
+    },
+    {
+        id: "Dinka-Nexus-RR",
+        name: "Dinka Nexus RR",
+        brand: "",
+        category: "Sports",
+        price: 210000,
+        seats: 4,
+        trunk: 80,
+        image: "9 Dinka Nexus RR.jpg",
+        description: ""
+    },
+    {
+        id: "Dinka-Tokage-USDM",
+        name: " Dinka Tokage USDM",
+        brand: "",
+        category: "Sports",
+        price: 60000,
+        seats: 4,
+        trunk: 80,
+        image: "9 Dinka Tokage USDM.jpg",
+        description: ""
+    },
+    {
+        id: "Dinka-Tokage-JDM",
+        name: "Dinka Tokage JDM",
+        brand: "",
+        category: "Sports",
+        price: 85000,
+        seats: 4,
+        trunk: 80,
+        image: "9 Dinka Tokage JDM.jpg",
+        description: ""
+    },
+    {
+        id: "Annis-Elegy-RH-2",
+        name: "Annis Elegy RH-2",
+        brand: "",
+        category: "Sports Classics",
+        price: 45000,
+        seats: 2,
+        trunk: 30,
+        image: "9 Annis Elegy RH-2.jpg",
+        description: ""
+    },
+    {
+        id: "Comet-Classic-Florio",
+        name: "Comet Classic Florio",
+        brand: "",
+        category: "Sports Classics",
+        price: 120000,
+        seats: 2,
+        trunk: 30,
+        image: "9 Comet Classic Florio.jpg",
+        description: ""
+    },
+    {
+        id: "Brute-Hurricane",
+        name: "Brute Hurricane",
+        brand: "",
+        category: "Muscle",
+        price: 35000,
+        seats: 2,
+        trunk: 30,
+        image: "9 Brute Hurricane.jpg",
+        description: ""
+    },
+    {
+        id: "declasse-impaler-deluxe",
+        name: "Declasse Impaler Deluxe",
+        brand: "",
+        category: "Muscle",
+        price: 50000,
+        seats: 2,
+        trunk: 30,
+        image: "9 Declasse Impaler Deluxe.jpg",
+        description: ""
+    },
+    {
+        id: "declasse-vigero-rattler",
+        name: "Declasse Vigero Rattler",
+        brand: "",
+        category: "Muscle",
+        price: 110000,
+        seats: 2,
+        trunk: 30,
+        image: "9 Declasse Vigero Rattler.jpg",
+        description: ""
+    },
+    {
+        id: " Bravado-Buffalo-HF",
+        name: " Bravado Buffalo HF",
+        brand: "",
+        category: "Muscle",
+        price: 80000,
+        seats: 2,
+        trunk: 30,
+        image: "9 Bravado Buffalo HF.jpg",
+        description: ""
+    },
+    {
+        id: "Vapid-Dominator-LE",
+        name: "Vapid Dominator LE",
+        brand: "",
+        category: "Muscle",
+        price: 75000,
+        seats: 2,
+        trunk: 30,
+        image: "9 Vapid Dominator LE.jpg",
+        description: ""
+    },
+        {
+        id: "Karin-Dice",
+        name: "Karin Dice",
+        brand: "",
+        category: "Utilitaire",
+        price: 20000,
+        seats: 0,
+        trunk: 0,
+        image: "9 Karin Dice.jpg",
+        description: ""
+    },
+        {
+        id: "Vapid-Steed",
+        name: "Vapid Steed",
+        brand: "",
+        category: "Vans",
+        price: 75000,
+        seats: 4,
+        trunk: 150,
+        image: "9 Vapid Steed.jpg",
+        description: ""
+    },
+        {
+        id: "BF-e-Surfer",
+        name: "BF e-Surfer",
+        brand: "",
+        category: "Vans",
+        price: 100000,
+        seats: 4,
+        trunk: 150,
+        image: "9 BF e-Surfer.jpg",
+        description: ""
+    },
+
+    {
+        id: "Grotti-Zero",
+        name: "Grotti Zero",
+        brand: "",
+        category: "Compacts",
+        price: 5000,
+        seats: 2,
+        trunk: 20,
+        image: "9 Grotti Zero.jpg",
+        description: ""
+    },
+    {
+        id: "Pfister-Meteor",
+        name: "Pfister Meteor",
+        brand: "",
+        category: "Super",
+        price: 800000,
+        seats: 2,
+        trunk: 30,
+        image: "9 Pfister Meteor.jpg",
+        description: ""
     }
 ];
